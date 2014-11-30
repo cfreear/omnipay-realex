@@ -30,4 +30,12 @@ class GatewayTest extends GatewayTestCase
         $this->assertInstanceOf('Omnipay\Realex\Message\EnrolmentRequest', $request);
         $this->assertSame('10.00', $request->getAmount());
     }
+
+    public function testCompletePurchase()
+    {
+        $request = $this->gateway->completePurchase(array('amount' => '10.00'));
+
+        $this->assertInstanceOf('Omnipay\Realex\Message\VerifySigRequest', $request);
+        $this->assertSame('10.00', $request->getAmount());
+    }
 }
