@@ -38,4 +38,31 @@ class GatewayTest extends GatewayTestCase
         $this->assertInstanceOf('Omnipay\Realex\Message\VerifySigRequest', $request);
         $this->assertSame('10.00', $request->getAmount());
     }
+
+    public function testFetchTransaction()
+    {
+        $request = $this->gateway->fetchTransaction(array('transactionId' => '12345'));
+
+        $this->assertInstanceOf('Omnipay\Realex\Message\FetchTransactionRequest', $request);
+        $this->assertSame('12345', $request->getTransactionId());
+    }
+
+    public function testRefund()
+    {
+        $this->gateway->setRefundPassword('ABCD');
+
+        $request = $this->gateway->refund(array('amount' => '10.00'));
+
+        $this->assertInstanceOf('Omnipay\Realex\Message\RefundRequest', $request);
+        $this->assertSame('ABCD', $this->gateway->getRefundPassword());
+        $this->assertSame('10.00', $request->getAmount());
+    }
+
+    public function testVoid()
+    {
+        $request = $this->gateway->void(array('transactionId' => '12345'));
+
+        $this->assertInstanceOf('Omnipay\Realex\Message\VoidRequest', $request);
+        $this->assertSame('12345', $request->getTransactionId());
+    }
 }
