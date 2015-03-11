@@ -1,6 +1,6 @@
 HTTP/1.1 200 OK
 Content-Type: text/xml;charset=UTF-8
-Content-Language: en-US
+Content-Language: en-GB
 Content-Length: 784
 Date: Fri, 25 Mar 2001 12:34:56 GMT
 Server: Realex 1.0
