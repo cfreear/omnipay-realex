@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml;charset=UTF-8
+Content-Language: en-GB
+Content-Length: 205
+Date: Fri, 25 Mar 2001 12:34:56 GMT
+Server: Realex 1.0
+
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<response timestamp="20010325123456">
+
+  <result>508</result>
+
+  <message>Original transaction not found.</message>
+
+  <orderid>_rebate_12</orderid>
+</response>
