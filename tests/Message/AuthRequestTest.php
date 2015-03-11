@@ -88,10 +88,13 @@ class AuthRequestTest extends TestCase
     public function testSendFailure()
     {
         $this->setMockHttpResponse('PurchaseFailure.txt');
+
+        /* @var $response   AuthResponse */
         $response = $this->request->send();
 
         $this->assertFalse($response->isSuccessful());
-        $this->assertSame('This orderId has already been processed.', $response->getMessage());
+        $this->assertSame('This transaction (12) has already been processed! If you feel this is incorrect please contact the merchant!', $response->getMessage());
+        $this->assertSame('12', $response->getTransactionId());
     }
 
     public function testCardBrandMap()

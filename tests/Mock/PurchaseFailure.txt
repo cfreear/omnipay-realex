@@ -1,7 +1,7 @@
 HTTP/1.1 200 OK
 Content-Type: text/xml;charset=UTF-8
-Content-Language: en-US
-Content-Length: 784
+Content-Language: en-GB
+Content-Length: 290
 Date: Fri, 25 Mar 2001 12:34:56 GMT
 Server: Realex 1.0
 
@@ -9,8 +9,9 @@ Server: Realex 1.0
 
 <response timestamp="20010325123456">
 
-  <result>508</result>
+  <result>501</result>
 
-  <message>This orderId has already been processed.</message>
+  <message>This transaction (12) has already been processed! If you feel this is incorrect please contact the merchant!</message>
 
+  <orderid>12</orderid>
 </response>
