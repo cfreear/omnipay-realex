@@ -1,0 +1,40 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml;charset=UTF-8
+Content-Language: en-US
+Content-Length: 784
+Date: Fri, 25 Mar 2001 12:34:56 GMT
+Server: Realex 1.0
+
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<response timestamp="20010325123456">
+
+  <merchantid>merchant123</merchantid>
+
+  <account>testaccount</account>
+
+  <orderid>12</orderid>
+
+  <authcode></authcode>
+
+  <result>00</result>
+
+  <message>Enrolled</message>
+
+  <pasref></pasref>
+
+  <timetaken>0</timetaken>
+
+  <authtimetaken>0</authtimetaken>
+
+  <pareq>TrG9-KDBBSYp_jQc+4KURhU_dNR%%jfKdj$K!j#BCK5X-h%_bPQ-@U=LxMGLH8dYd5FuCndj?n?!NqL2LxmxW@rpxg5ARe-@w2=Q79sP_bTxhbNrH25?eVGt49QT*9kZ5N^!mcXadmSTtx7yPcsa7UBF*7S=^r!AZfYRZn5hZyRpAkTSLXXwq92zK^!ZuJD*qr_6Kzr^!=rH_S5_EaWze!zy4UEAS^e538aVeRe4vSz8q7_yNV%E7K*Ddx2-UPAa_h!f-GB!e%cvMKt@S#gzmqLKT5WzNxDs%C#S_Tvs#CPF#8sUXf27NfwYVCrqw9s$dP?Lgz$+u+8NcCdGvDe@7=$9Vz_!bYsRyC%NL^j=M@@8cUg#R@67M2=c?CLfYtLD2XNnuUDw5w+JSmG*S*XZXT345T2d#ERJWShrvbV8$#zX!=rg5DXLxJcaDppPtxM_zE@y27L=_X+DJfN^UwfwZkv63+KzJmC=kp-?DQdCsYmcHhhq2xNJHpaAG</pareq>
+
+  <url>http://www.acs.com</url>
+
+  <enrolled>Y</enrolled>
+
+  <xid>7ba3b1e6e6b542489b73243aac050777</xid>
+
+  <sha1hash>05ed3c6b4c6c9ed53f892eadaa58bef22f0061ac</sha1hash>
+
+</response>

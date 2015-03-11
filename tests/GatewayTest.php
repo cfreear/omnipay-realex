@@ -6,6 +6,11 @@ use Omnipay\Tests\GatewayTestCase;
 
 class GatewayTest extends GatewayTestCase
 {
+    /**
+     * @var $gateway RemoteGateway
+     */
+    protected $gateway;
+
     public function setUp()
     {
         parent::setUp();
@@ -15,6 +20,9 @@ class GatewayTest extends GatewayTestCase
 
     public function testPurchase()
     {
+        /**
+         * @var $request \Omnipay\Realex\Message\AuthRequest
+         */
         $request = $this->gateway->purchase(array('amount' => '10.00'));
 
         $this->assertInstanceOf('Omnipay\Realex\Message\AuthRequest', $request);
@@ -25,6 +33,9 @@ class GatewayTest extends GatewayTestCase
     {
         $this->gateway->set3dSecure(1);
 
+        /**
+         * @var $request \Omnipay\Realex\Message\AuthRequest
+         */
         $request = $this->gateway->purchase(array('amount' => '10.00'));
 
         $this->assertInstanceOf('Omnipay\Realex\Message\EnrolmentRequest', $request);
@@ -35,6 +46,9 @@ class GatewayTest extends GatewayTestCase
     {
         $request = $this->gateway->completePurchase(array('amount' => '10.00'));
 
+        /**
+         * @var $request \Omnipay\Realex\Message\AuthRequest
+         */
         $this->assertInstanceOf('Omnipay\Realex\Message\VerifySigRequest', $request);
         $this->assertSame('10.00', $request->getAmount());
     }
@@ -43,6 +57,9 @@ class GatewayTest extends GatewayTestCase
     {
         $request = $this->gateway->fetchTransaction(array('transactionId' => '12345'));
 
+        /**
+         * @var $request \Omnipay\Realex\Message\AuthRequest
+         */
         $this->assertInstanceOf('Omnipay\Realex\Message\FetchTransactionRequest', $request);
         $this->assertSame('12345', $request->getTransactionId());
     }
@@ -51,6 +68,9 @@ class GatewayTest extends GatewayTestCase
     {
         $this->gateway->setRefundPassword('ABCD');
 
+        /**
+         * @var $request \Omnipay\Realex\Message\AuthRequest
+         */
         $request = $this->gateway->refund(array('amount' => '10.00'));
 
         $this->assertInstanceOf('Omnipay\Realex\Message\RefundRequest', $request);
@@ -60,6 +80,9 @@ class GatewayTest extends GatewayTestCase
 
     public function testVoid()
     {
+        /**
+         * @var $request \Omnipay\Realex\Message\AuthRequest
+         */
         $request = $this->gateway->void(array('transactionId' => '12345'));
 
         $this->assertInstanceOf('Omnipay\Realex\Message\VoidRequest', $request);
