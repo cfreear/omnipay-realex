@@ -6,6 +6,11 @@ use Omnipay\Tests\TestCase;
 
 class AuthRequestTest extends TestCase
 {
+    /**
+     * @var $request AuthRequest
+     */
+    private $request;
+
     public function setUp()
     {
         $this->request = new AuthRequest($this->getHttpClient(), $this->getHttpRequest());
@@ -65,6 +70,8 @@ class AuthRequestTest extends TestCase
     public function testSendSuccess()
     {
         $this->setMockHttpResponse('PurchaseSuccess.txt');
+
+        /* @var $response   AuthResponse */
         $response = $this->request->send();
 
         $this->assertTrue($response->isSuccessful());
@@ -85,5 +92,18 @@ class AuthRequestTest extends TestCase
 
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('This orderId has already been processed.', $response->getMessage());
+    }
+
+    public function testCardBrandMap()
+    {
+        $this->request->setCard(array(
+            'number' => '5500005555555559'
+        ));
+
+        $data = simplexml_load_string($this->request->getData());
+
+        $this->assertInstanceOf('SimpleXMLElement', $data);
+
+        $this->assertSame('MC', (string)$data->card->type);
     }
 }
