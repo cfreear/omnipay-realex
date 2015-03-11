@@ -1,0 +1,51 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml;charset=UTF-8
+Content-Language: en-GB
+Content-Length: 784
+Date: Fri, 25 Mar 2001 12:34:56 GMT
+Server: Realex 1.0
+
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<response timestamp="20010325123456">
+
+  <merchantid>merchant123</merchantid>
+
+  <account>testaccount</account>
+
+  <orderid>12</orderid>
+
+  <authcode>00000</authcode>
+
+  <result>00</result>
+
+  <cvnresult>U</cvnresult>
+
+  <avspostcoderesponse>U</avspostcoderesponse>
+
+  <avsaddressresponse>U</avsaddressresponse>
+
+  <batchid>0</batchid>
+
+  <message>Voided Successfully</message>
+
+  <pasref>14260724231204775</pasref>
+
+  <timetaken>0</timetaken>
+
+  <authtimetaken>0</authtimetaken>
+
+  <cardissuer>
+
+    <bank></bank>
+
+    <country></country>
+
+    <countrycode></countrycode>
+
+    <region></region>
+
+  </cardissuer>
+
+  <sha1hash>a025d3950a1192b56af58a718b7f8f7524589b18</sha1hash>
+</response>
