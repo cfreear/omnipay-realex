@@ -1,0 +1,51 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml;charset=UTF-8
+Content-Language: en-US
+Content-Length: 784
+Date: Fri, 25 Mar 2001 12:34:56 GMT
+Server: Realex 1.0
+
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<response timestamp="20010325123456">
+
+  <merchantid>merchant123</merchantid>
+
+  <account>testaccount</account>
+
+  <orderid>12</orderid>
+
+  <authcode>12345</authcode>
+
+  <result>00</result>
+
+  <cvnresult>N</cvnresult>
+
+  <avspostcoderesponse>M</avspostcoderesponse>
+
+  <avsaddressresponse>M</avsaddressresponse>
+
+  <batchid>123456</batchid>
+
+  <message>Authorised</message>
+
+  <pasref>70874527936401179</pasref>
+
+  <timetaken>0</timetaken>
+
+  <authtimetaken>0</authtimetaken>
+
+  <cardissuer>
+
+    <bank>AIB GROUP (UK) P.L.C.</bank>
+
+    <country>UNITED KINGDOM</country>
+
+    <countrycode>GB</countrycode>
+
+    <region>EUR</region>
+
+  </cardissuer>
+
+  <sha1hash>05ed3c6b4c6c9ed53f892eadaa58bef22f0061ac</sha1hash>
+</response>
